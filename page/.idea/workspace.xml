@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e99232f9-2afe-48c8-bcca-ab8197bbcf9f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startbootstrap-freelancer-gh-pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/startbootstrap-freelancer-gh-pages/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="e99232f9-2afe-48c8-bcca-ab8197bbcf9f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,16 +141,15 @@
       <workItem from="1574831809510" duration="1330000" />
       <workItem from="1574918826816" duration="1209000" />
       <workItem from="1574921034477" duration="7880000" />
-      <workItem from="1575300542238" duration="294000" />
+      <workItem from="1575300542238" duration="718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12747000" />
+    <option name="totallyTimeSpent" value="13171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15970773" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
