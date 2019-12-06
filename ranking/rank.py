@@ -8,12 +8,10 @@ movie = BeautifulSoup(res, 'html.parser')
 
 movie = movie.findAll("div", class_="thumb")
 print(movie)
-out = open("movieimgs.html", 'w')
 count = 0
 for ul in movie:
     count += 1
     imgUrl = ul.find("img")["src"]
-    urllib.request.urlretrieve(imgUrl, "%d" % count + '.jpg')
+    urllib.request.urlretrieve(imgUrl,"C:/Users/LG/Desktop/CloudCom/page/projectPage/poster/"+"%d" % count + '.jpg')
     if count == 8:
         break
-    print(ul.img, file=out)

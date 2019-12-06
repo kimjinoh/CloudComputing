@@ -27,11 +27,6 @@
     .mvinfo_link{
       padding: 20px;
     }
-    body{
-      margin-left:20%;
-      margin-right: 20%;
-      margin-top: 7%;
-    }
 </style>
 </head>
 
@@ -62,7 +57,7 @@
   </nav>
 
   <!-- Jumbotron Header -->
-  <header class="jumbotron my-4">
+  <header class="jumbotron my-4" style="padding-top: 7%;">
 
     <h1 class="display-3" style="font-size:60px; font-weight: bold;">모든 영화관을 한 눈에!</h1>
     <p class="lead" style="font-weight: bold;">그 동안 영화시간을 찾아 여기저기 헤매셨던 당신에게, 편리한 서비스를 제공합니다.<br>모든 영화관의 상영정보를 바로 여기, 한 곳에서!</p>
@@ -71,7 +66,7 @@
   </header>
 
   <!-- Contact Section -->
-  <section class="page-section" id="contact">
+  <section class="page-section" id="contact" style="margin-left: 25%;margin-right: 25%;">
     <!-- 영화 순위 출력 부분 -->
     <center><div>
       <p style="font-size:30px; font-weight: bold;">영화 랭킹</p>
@@ -79,11 +74,23 @@
       <br/>
     </div></center>
 
-
+   <!-- <button>Get JSON data</button>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $.getJSON("movie_ranking.js", function(result){
+            $.each(result, function(i, field){
+              $("div").append(field + " ");
+            });
+          });
+        });
+      });
+    </script>
+-->
     <div class="row text-center">
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/1.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -93,7 +100,7 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/2.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -103,7 +110,17 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/3.jpg" alt="">
+          <div class="card-footer">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text"> Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="poster/4.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -113,7 +130,7 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/5.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -123,7 +140,7 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/6.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -133,7 +150,7 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/7.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -143,17 +160,7 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-footer">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" src="poster/8.jpg" alt="">
           <div class="card-footer">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Lorem ipsum dolor sit amet</p>
@@ -282,10 +289,10 @@
 
       <!-- About Section Content -->
       <div class="row">
-        <div class="col-lg-4 ml-auto">
+        <div class="col-lg-6 ml-auto">
           <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
         </div>
-        <div class="col-lg-4 mr-auto">
+        <div class="col-lg-6 mr-auto">
           <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
         </div>
       </div>
