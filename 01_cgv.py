@@ -8,8 +8,6 @@ movie = BeautifulSoup(res, 'html.parser')
 
 movie = movie.findAll("div", class_="col-times")
 
-#print(movie)
-
 out=open("01_outputs.html",'w', -1, "utf-8")
 
 for ul in movie:
