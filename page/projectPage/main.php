@@ -28,9 +28,15 @@ $R=json_decode($json_string,true);
         .card-footer{
             height: 200px;!important;
         }
-        .mvinfo_link{
-            padding: 20px;
+        .sbox{
+            -webkit-appearance: none; /* 네이티브 외형 감추기 */
+            -moz-appearance: none;
+            appearance: none;
+            background: url(img/arrow.png) no-repeat 95% 50%;
+
+
         }
+       .sbox::-ms-expand { display: none; }
     </style>
 </head>
 
@@ -341,100 +347,66 @@ $R=json_decode($json_string,true);
 <!-- Portfolio Section -->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
         <center><div>
-                <p style="font-size:30px; font-weight: bold;">상영 정보</p>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 시간표</h2>
                 <p>원하는 영화의 상영 정보를 한 번에 확인하세요!</p>
                 <br/>
             </div></center>
+            <div>
+                <form method="post" action="action_popup.php" target="if1">
+                    <select name="mname" id="selectBox" class="sbox" style="width: 200px; height: 50px;"">
+                    <?php
+                    $servername = "localhost:3306";
+                    $username = "root";
+                    $password = "0512";
 
-        <!-- Portfolio Grid Items -->
-        <div class="row">
+                    //create connection
+                    $conn = new mysqli($servername, $username, $password);
 
-            <!-- Portfolio Item 1 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
+                    //check connection
+                    if($conn -> connect_error){
+                        die("Connection failed : " + $conn -> connect_error);
+                    }
+                    $dbname = "movie";
+                    mysqli_select_db($conn, $dbname) or die('DB selection failed');
 
-            <!-- Portfolio Item 2 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
+                    $sql = "SELECT DISTINCT * FROM movie";
+                    $result = $conn->query($sql);
+                    echo "<option>";
+                    if($result->num_rows >0){
+                        while($row=$result->fetch_assoc()) {
+                            echo $row["mv_name"]."<br><option/>";
+                        }
+                    }else{
+                        echo "0 result";
+                    }
 
-                        </div>
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 3 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-
-                        </div>
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 4 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-
-                        </div>
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 5 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-
-                        </div>
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 6 -->
-            <div class="col-md-12 col-lg-12">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-
-                        </div>
-                    </div>
-                    <div class="mvinfo_link">
-                        <a class="img-fluid" src="img/portfolio/cabin.png" alt="">영화정보</a>
-                    </div>
-                </div>
-            </div>
-
+                    $conn->close();
+                    ?><select/>
+                    &nbsp;&nbsp;&nbsp;
+                        <select name="lname" class="sbox" style="width: 100px; height: 50px;">
+                            <option>대전</option>
+                            <option>충북</option>
+                            <option>충남</option>
+                            <option>세종</option>
+                        </select>
+                    &nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-primary btn-xl" id="selectButton">선택</button>
+                        <form/>
+                        <br><br><br>
         </div>
-        <!-- /.row -->
+            <iframe name="if1">
+            </iframe>
+            <div/>
 
-    </div>
 </section>
 <hr class="ht-line">
 <!-- About Section -->
@@ -507,272 +479,6 @@ $R=json_decode($json_string,true);
     </a>
 </div>
 
-<!-- 상영정보 클릭할 때 나오는 팝업창 설정부분-->
-
-<!-- Portfolio Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-
-                            <!--select목록-->
-                            <form>
-                                <select>
-                                    <option>대전</option>
-                                    <option>청주</option>
-                                    <option>충주</option>
-                                    <option>진천</option>
-                                    <option>제천</option>
-                                    <option>보은</option>
-                                </select>
-                            </form>
-
-                            <form>
-                                <select multiple>
-                                    <option>대전</option>
-                                    <option>청주</option>
-                                    <option>충주</option>
-                                    <option>진천</option>
-                                    <option>제천</option>
-                                    <option>보은</option>
-                                </select>
-                            </form>
-
-                            <form>
-                                <select size="4">
-                                    <option>대전</option>
-                                    <option>청주</option>
-                                    <option>충주</option>
-                                    <option>진천</option>
-                                    <option>제천</option>
-                                    <option>보은</option>
-                                </select>
-                            </form>
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/game.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/safe.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/submarine.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

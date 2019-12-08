@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fff8b0-82be-407f-8b32-200928af191f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/projectPage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/projectPage/movie_ranking.json" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/movie_ranking.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/projectPage/poster/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/poster/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/projectPage/poster/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/poster/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/projectPage/poster/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/poster/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ranking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ranking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ranking/movie_ranking.json" beforeDir="false" afterPath="$PROJECT_DIR$/ranking/movie_ranking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/projectPage/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/page/projectPage/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -254,15 +247,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32968238" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
