@@ -6,9 +6,7 @@ import re
 import urllib.request
 from datetime import datetime, timedelta
 import threading
-
 import time
-
 from bs4 import BeautifulSoup
 
 options = Options()
