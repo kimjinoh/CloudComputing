@@ -49,6 +49,8 @@
   from wordcloud import WordCloud, STOPWORDS
   from threading import Thread
   from time import sleep
+  
+  import jason
   ```
 
   #### MySQL 테이블 생성
@@ -85,4 +87,7 @@
     ```
     #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
+    
+    ```
+    > 
        
