@@ -37,7 +37,8 @@
   ```
   #### Chromedriver 설치 및 경로 설정
   ```py
-  크롬드라이버 버전이 리눅스에서 설치할 때 맞는 버전을 찾을 수가 없어 버전에 맞는 크롬드라이버를 윈도우 에서 다운 받은 다음 WinSCP로 옮겨 주었습니다.
+  크롬드라이버 버전이 리눅스에서 설치할 때 맞는 버전을 찾을 수가 없어 
+  버전에 맞는 크롬드라이버를 윈도우 에서 다운 받은 다음 WinSCP로 옮겨 주었습니다.
   unzip chromedriver_linux64.zip
   chmod +x chromedriver
   sudo mv -f chromedriver /usr/local/share/chromedriver
@@ -126,8 +127,32 @@
     #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
     
-    #### 
+    #### php에서 json 파일을 읽어 사용을 위한 배열처리
+    ```php
+    <?php
+    $json_string = file_get_contents('movie_ranking.json'); //'json파일명'.json
+    $R=json_decode($json_string,true);
+    ?>
     ```
     
+    #### ubuntu 에서 php를 통한 mysql DB 연동
+    ```php
+    <?php
+    $servername = "<퍼블릭IP주소>";
+      $username = "root";
+      $password = "<사용자PW>";
+      $dbname = "<스키마이름>";
+      $port = "8000"; //Mysql 포트 번호 설정
+
+      //create connection
+      $conn = new mysqli($servername, $username, $password, $dbname, $port);  
+      //ubuntu에서 외부접근 허용을 위해 $servername과 $port 추가 필요
+
+      //check connection
+      if($conn -> connect_error){
+         die("Connection failed : " + $conn -> connect_error);
+      }
+      mysqli_select_db($conn, $dbname) or die('DB selection failed');
+      ?>
     ```
     
