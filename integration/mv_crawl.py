@@ -13,7 +13,7 @@ import datetime
 from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
-
+import threading
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
@@ -22,7 +22,14 @@ driver = webdriver.Chrome(chrome_options = options, executable_path = "/usr/bin/
 driver.implicitly_wait(3)
 driver.maximize_window()
 
-out = open("timetable.txt",'w', -1, "utf-8")
+def fun():
+    timer = threading.Timer(86000, fun)
+    global out
+    out = open("timetable.txt", 'w', -1, "utf-8")
+    cgvtime_request()
+    lottime_request()
+    megatime_request()
+    timer.start()
 def lottime_request():
     url = 'http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx#%EC%A0%84%EC%B2%B4'
     driver.get(url)
@@ -77,7 +84,6 @@ def lottime_request():
             final = []
             a = p.text.split(":")
             title = re.split('\n', a[0])[0][2:]
-            #print(('롯데시네마.' + branch + loc_name + title).split("."), file = out)
             for i in a:
                 b = i[0:2] + i[-2:]
                 result_seta.append(b)
@@ -98,7 +104,7 @@ def lottime_request():
             sortlist = sorted(final, key=lambda x: (x))
             data = []
             for abc in sortlist:
-                data.append(("L." + str(lt_id) + ".롯데시네마." + branch + loc_name + title) + "." + abc)
+                data.append(("L." + str(lt_id) + ".롯데시네마." + branch + loc_name + title).replace(' ','') + "." + abc)
                 lt_id += 1
             for abc in range(0, len(sortlist)):
                 print(data[abc], file=out)
@@ -266,16 +272,15 @@ def megatime_request():
                 if(sortlist!=[]):
                     data = []
                     for abc in sortlist:
-                        data.append(("M." + str(mega_id) + title_arr) + "." + abc)
+                        data.append(("M." + str(mega_id) + title_arr).replace(' ','') + "." + abc)
                         mega_id += 1
                     for abc in range(0, len(sortlist)):
                         print(data[abc], file = out)
-                    #print(sortlist, file = out)
+                    
             for q in p.find_elements_by_class_name("title"):
                 zz = q.text.split("\n")
                 title = re.split('\n', zz[1])[0][0:]
                 title_arr = ".메가박스."+ branch + loc_name + title
-                #print(title_arr.split("."), file = out)
                 final.clear()
             for i in a:
                 b = i[0:2] + i[-2:]
@@ -297,7 +302,7 @@ def megatime_request():
             result_seta.clear()
         data = []
         for abc in sortlist:
-            data.append(("M." + str(mega_id) + title_arr) + "." + abc)
+            data.append(("M." + str(mega_id) + title_arr).replace(' ','') + "." + abc)
             mega_id += 1
         for abc in range(0, len(sortlist)):
             print(data[abc], file = out)
@@ -305,7 +310,4 @@ def megatime_request():
         sortlist.clear()
         time.sleep(3)
 
-
-cgvtime_request()
-lottime_request()
-megatime_request()
+fun()
