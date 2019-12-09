@@ -1,8 +1,28 @@
 import requests
 from bs4 import BeautifulSoup as BS
 import json
+import urllib.request
+from urllib.request import urlretrieve
+from bs4 import BeautifulSoup
+from threading import Thread
+from time import sleep
 
 
+def save_poster():
+    url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EB%B0%95%EC%8A%A4%EC%98%A4%ED%94%BC%EC%8A%A4%20%ED%9D%A5%ED%96%89%EC%88%9C%EC%9C%84'
+    res = urllib.request.urlopen(url).read()
+    movie = BeautifulSoup(res, 'html.parser')
+
+    movie = movie.findAll("div", class_="thumb")
+    print(movie)
+    count = 0
+    for ul in movie:
+        count += 1
+        imgUrl = ul.find("img")["src"]
+        urllib.request.urlretrieve(imgUrl,"C:/Users/LG/Desktop/CloudCom/page/projectPage/poster/"+"%d" % count + '.jpg')
+        if count == 8:
+            break
+#=================================================================
 def movie_Crawling(html):
     temp_list = []
     temp_dict = {}
@@ -34,7 +54,7 @@ def movie_Crawling(html):
     return temp_list, temp_dict
 #====================================================================================================
 def toJson(rank_dict):
-    with open('movie_ranking.json', 'w', encoding='utf-8') as file:
+    with open('C:/Users/LG/Desktop/CloudCom/page/projectPage/movie_ranking.json', 'w', encoding='utf-8') as file:
         json.dump(rank_dict, file, ensure_ascii=False, indent='\t')
 #====================================================================================================
 rank_list = []
@@ -57,5 +77,25 @@ for item in rank_list:
 
 
 # Json파일 생성
-toJson(rank_dict)
 
+
+
+
+def total():
+    while True:
+        toJson(rank_dict)
+        save_poster()
+        sleep(3)
+#================================================
+
+
+
+
+def main():
+    th = Thread(target=total)
+    th.demon = True
+    th.start()
+
+
+if __name__ == '__main__':
+    main()

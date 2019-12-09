@@ -8,7 +8,7 @@ wordcloud = WordCloud(
     font_path = font_path,
     width = 1000,
     height = 500,
-    colormap="gist_rainbow"
+    colormap="nipy_spectral"
 )
 
 text=open('output.txt').read()

@@ -59,7 +59,7 @@ $R=json_decode($json_string,true);
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">상영 정보</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">영화 핫이슈</a>
                 </li>
             </ul>
         </div>
@@ -78,12 +78,18 @@ $R=json_decode($json_string,true);
 <!-- Contact Section -->
 <section class="page-section" id="contact" style="margin-left: 25%;margin-right: 25%;">
     <!-- 영화 순위 출력 부분 -->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+    </div>
     <center><div>
-            <p style="font-size:30px; font-weight: bold;">영화 랭킹</p>
+            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 랭킹</h2>
             <p>매일 9:00AM 업데이트</p>
             <br/>
         </div></center>
-
     <div class="row text-center">
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
@@ -363,42 +369,31 @@ $R=json_decode($json_string,true);
             <div>
                 <form method="post" action="action_popup.php" target="if1">
                     <select name="mname" id="selectBox" class="sbox" style="width: 200px; height: 50px;"">
-                    <?php
-                    $servername = "localhost:3306";
-                    $username = "root";
-                    $password = "0512";
-
-                    //create connection
-                    $conn = new mysqli($servername, $username, $password);
-
-                    //check connection
-                    if($conn -> connect_error){
-                        die("Connection failed : " + $conn -> connect_error);
+                    <option value="">영화 선택</option>
+                <?php
+                include "dbconfig.php";
+                $sql = "SELECT DISTINCT * FROM store";
+                $result = $conn->query($sql);
+                echo "<option>";
+                if($result->num_rows >0){
+                    while($row=$result->fetch_assoc()) {
+                        echo $row["Stno"]."<br><option/>";
                     }
-                    $dbname = "movie";
-                    mysqli_select_db($conn, $dbname) or die('DB selection failed');
+                }else{
+                    echo "0 result";
+                }
+                $conn->close();
+                ?><select/>
 
-                    $sql = "SELECT DISTINCT * FROM movie";
-                    $result = $conn->query($sql);
-                    echo "<option>";
-                    if($result->num_rows >0){
-                        while($row=$result->fetch_assoc()) {
-                            echo $row["mv_name"]."<br><option/>";
-                        }
-                    }else{
-                        echo "0 result";
-                    }
-
-                    $conn->close();
-                    ?><select/>
-                    &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
                         <select name="lname" class="sbox" style="width: 100px; height: 50px;">
-                            <option>대전</option>
-                            <option>충북</option>
-                            <option>충남</option>
-                            <option>세종</option>
+                            <option>청주시</option>
+                            <option>청주시</option>
+                            <option>청주시</option>
+                            <option>청주시</option>
                         </select>
                     &nbsp;&nbsp;&nbsp;
+
                         <button type="submit" class="btn btn-primary btn-xl" id="selectButton">선택</button>
                         <form/>
                         <br><br><br>
@@ -412,11 +407,8 @@ $R=json_decode($json_string,true);
 <!-- About Section -->
 <section class="page-section bg-primary text-white mb-0" id="about" style="background-color: #ffffff !important;">
     <div class="container">
-
-        <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white" style="color: #1ABC9C !important;">영화 핫이슈</h2>
-
         <!-- Icon Divider -->
+
         <div class="divider-custom divider-light" style="color: #1ABC9C !important;">
             <div class="divider-custom-line" style="color: #1ABC9C !important;"></div>
             <div class="divider-custom-icon" style="color: #1ABC9C !important;">
@@ -424,16 +416,17 @@ $R=json_decode($json_string,true);
             </div>
             <div class="divider-custom-line" style="color: #1ABC9C !important;"></div>
         </div>
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white" style="color: #1ABC9C !important;">영화 핫이슈</h2>
+        <br/>
+        <center><p style="color: black !important;">이미지를 클릭하면 다음 영화 매거진으로 이동합니다!</p>
+        </center>
 
         <!-- About Section Content -->
         <div class="row" style="color: #1ABC9C !important;">
-            <div style="text-align: center;">
-                <img width="1000" height="500" src="img/wordcloud.png" >
-                </div>
         </div>
-
-
-        <div class="text-center mt-4">
+        <div id="wc" class="text-center mt-4">
+            <a href="https://movie.daum.net/magazine/new"><img width="1100" height="550" src="img/wordcloud.png"></a>
         </div>
 
     </div>

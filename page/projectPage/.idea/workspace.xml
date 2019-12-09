@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fb7e342-195c-4c6c-9e38-f9e2da609824" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="400" column="38" lean-forward="true" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
+            <state relative-caret-position="241">
+              <caret line="373" column="38" lean-forward="true" selection-start-line="373" selection-start-column="38" selection-end-line="373" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#14204#14210#0#HTML" expanded="true" />
@@ -35,11 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_popup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="145" lean-forward="true" selection-start-line="17" selection-start-column="145" selection-end-line="17" selection-end-column="145" />
+            <state relative-caret-position="352">
+              <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aa.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -73,17 +80,18 @@
         <option value="$PROJECT_DIR$/css/freelancer.css" />
         <option value="$PROJECT_DIR$/12.html" />
         <option value="$PROJECT_DIR$/loaddata.php" />
-        <option value="$PROJECT_DIR$/main.php" />
         <option value="$PROJECT_DIR$/action_popup.php" />
+        <option value="$PROJECT_DIR$/main.php" />
+        <option value="$PROJECT_DIR$/aa.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1.1" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="960" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -132,7 +140,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.main.php">
+  <component name="RunManager" selected="JavaScript Debug.action_popup.php">
+    <configuration name="action_popup.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/projectPage/action_popup.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/projectPage/index.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -140,6 +151,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="aa.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/aa.php">
       <method v="2" />
     </configuration>
     <configuration name="tt.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tt.php">
@@ -150,9 +164,13 @@
       <item itemvalue="JavaScript Debug.main.php" />
       <item itemvalue="PHP Built-in Web Server.Unnamed" />
       <item itemvalue="PHP Script.tt.php" />
+      <item itemvalue="PHP Script.aa.php" />
+      <item itemvalue="JavaScript Debug.action_popup.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.action_popup.php" />
+        <item itemvalue="PHP Script.aa.php" />
         <item itemvalue="JavaScript Debug.main.php" />
         <item itemvalue="JavaScript Debug.index.php" />
         <item itemvalue="PHP Script.tt.php" />
@@ -172,24 +190,23 @@
       <workItem from="1575716330745" duration="8688000" />
       <workItem from="1575737117471" duration="2991000" />
       <workItem from="1575781187110" duration="15455000" />
-      <workItem from="1575801264868" duration="19232000" />
+      <workItem from="1575801264868" duration="26285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46366000" />
+    <option name="totallyTimeSpent" value="53419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.03208556" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40320855" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3273305" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40254238" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -240,10 +257,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_popup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="400" column="38" lean-forward="true" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
+        <state relative-caret-position="241">
+          <caret line="373" column="38" lean-forward="true" selection-start-line="373" selection-start-column="38" selection-end-line="373" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#14204#14210#0#HTML" expanded="true" />
@@ -256,13 +287,6 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action_popup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="145" lean-forward="true" selection-start-line="17" selection-start-column="145" selection-end-line="17" selection-end-column="145" />
         </state>
       </provider>
     </entry>
