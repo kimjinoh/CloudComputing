@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e99232f9-2afe-48c8-bcca-ab8197bbcf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ranking/ToWordCloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectPage/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectPage/action_popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/action_popup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectPage/img/wordcloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/img/wordcloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectPage/dbconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/dbconfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectPage/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectPage/movie_ranking.json" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/movie_ranking.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectPage/poster/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/poster/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectPage/poster/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/poster/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectPage/poster/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/projectPage/poster/8.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ranking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ranking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ranking/jsMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ranking/jsMaking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ranking/movie_ranking.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ranking/movie_ranking.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ranking/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ranking/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ranking/test1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ranking/wc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ranking/wc2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projectPage/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="379" column="58" lean-forward="true" selection-start-line="379" selection-start-column="58" selection-end-line="379" selection-end-column="58" />
+            <state relative-caret-position="4826">
+              <caret line="254" column="36" selection-start-line="254" selection-start-column="36" selection-end-line="254" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,8 +43,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projectPage/dbconfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projectPage/movie_ranking.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -63,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projectPage/action_popup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="425">
+              <caret line="17" column="88" lean-forward="true" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -96,8 +94,9 @@
         <option value="$PROJECT_DIR$/projectPage/index.html" />
         <option value="$PROJECT_DIR$/projectPage/movie_ranking.json" />
         <option value="$PROJECT_DIR$/projectPage/1.html" />
-        <option value="$PROJECT_DIR$/projectPage/action_popup.php" />
+        <option value="$PROJECT_DIR$/projectPage/dbconfig.php" />
         <option value="$PROJECT_DIR$/projectPage/main.php" />
+        <option value="$PROJECT_DIR$/projectPage/action_popup.php" />
       </list>
     </option>
   </component>
@@ -108,10 +107,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1.1" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-23" />
-    <option name="y" value="-21" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="960" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -196,18 +195,18 @@
       <workItem from="1575555788609" duration="1813000" />
       <workItem from="1575605511693" duration="12500000" />
       <workItem from="1575699256074" duration="6284000" />
-      <workItem from="1575860754690" duration="9344000" />
+      <workItem from="1575860754690" duration="19046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43940000" />
+    <option name="totallyTimeSpent" value="53642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0796875" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.116145834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -221,13 +220,35 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104386" side_tool="true" visible="true" weight="0.03177966" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104386" side_tool="true" weight="0.03177966" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.116145834" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895614" weight="0.32905984" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49895614" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104386" side_tool="true" weight="0.03177966" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -263,31 +284,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projectPage/index.html" />
     <entry file="file://$PROJECT_DIR$/projectPage/1.html" />
+    <entry file="file://$PROJECT_DIR$/projectPage/dbconfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projectPage/action_popup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="425">
+          <caret line="17" column="88" lean-forward="true" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projectPage/movie_ranking.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectPage/dbconfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="52">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projectPage/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="379" column="58" lean-forward="true" selection-start-line="379" selection-start-column="58" selection-end-line="379" selection-end-column="58" />
+        <state relative-caret-position="4826">
+          <caret line="254" column="36" selection-start-line="254" selection-start-column="36" selection-end-line="254" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />

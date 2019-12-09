@@ -16,7 +16,7 @@ $conn = new mysqli($servername, $username, $password);
 if($conn -> connect_error){
     die("Connection failed : " + $conn -> connect_error);
 }
-$dbname = "hw";
+$dbname = "movie";
 mysqli_select_db($conn, $dbname) or die('DB selection failed');
 
 ?>

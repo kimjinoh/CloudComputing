@@ -1,6 +1,30 @@
 <?php
 $json_string = file_get_contents('movie_ranking.json');
 $R=json_decode($json_string,true);
+$servername = "3.211.18.78";
+$username = "root";
+$password = "root";
+$dbname = "movie";
+$port = "8000";
+//create connection
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+//check connection
+if($conn -> connect_error){
+    die("Connection failed : " + $conn -> connect_error);
+}
+mysqli_select_db($conn, $dbname) or die('DB selection failed');
+$sql = "SELECT DISTINCT mv_name FROM movie";
+$result = $conn->query($sql);
+$options = "";
+//var_dump($result);
+if($result->num_rows >0){
+    while($row=mysqli_fetch_array($result)) {
+        $options .= "<option>".$row['mv_name']."<br><option/>";
+    }
+}else{
+    $options .= "0 result";
+}
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,18 +49,23 @@ $R=json_decode($json_string,true);
         .card-img-top{
             height: 350px;!important;
         }
-        .card-footer{
-            height: 200px;!important;
-        }
         .sbox{
             -webkit-appearance: none; /* 네이티브 외형 감추기 */
             -moz-appearance: none;
             appearance: none;
             background: url(img/arrow.png) no-repeat 95% 50%;
-
-
+            font-size: 22px;
         }
-       .sbox::-ms-expand { display: none; }
+        .sbox::-ms-expand { display: none;
+        }
+        .if{
+            width:500px;
+            height: 300px;
+            font-size: 32px;
+        }
+        .card-footer{
+            background-color: white;
+        }
     </style>
 </head>
 
@@ -67,7 +96,7 @@ $R=json_decode($json_string,true);
 </nav>
 
 <!-- Jumbotron Header -->
-<header class="jumbotron my-4" style="padding-top: 7%;">
+<header class="jumbotron my-4" style="padding-top: 7%; padding-left: 10%;">
 
     <h1 class="display-3" style="font-size:60px; font-weight: bold;">모든 영화관을 한 눈에!</h1>
     <p class="lead" style="font-weight: bold;">그 동안 영화시간을 찾아 여기저기 헤매셨던 당신에게, 편리한 서비스를 제공합니다.<br>모든 영화관의 상영정보를 바로 여기, 한 곳에서!</p>
@@ -77,7 +106,7 @@ $R=json_decode($json_string,true);
 
 <!-- Contact Section -->
 <section class="page-section" id="contact" style="margin-left: 25%;margin-right: 25%;">
-    <!-- 영화 순위 출력 부분 -->
+    <!-- Icon Divider -->
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -85,11 +114,13 @@ $R=json_decode($json_string,true);
         </div>
         <div class="divider-custom-line"></div>
     </div>
+    <!-- 영화 순위 출력 부분 -->
     <center><div>
-            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 랭킹</h2>
+            <p style="font-size:30px; font-weight: bold;">영화 랭킹</p>
             <p>매일 9:00AM 업데이트</p>
             <br/>
         </div></center>
+
     <div class="row text-center">
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
@@ -349,7 +380,7 @@ $R=json_decode($json_string,true);
     </div>
     <!-- /.row -->
 </section>
-
+<hr class="ht-line">
 <!-- Portfolio Section -->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -366,49 +397,39 @@ $R=json_decode($json_string,true);
                 <p>원하는 영화의 상영 정보를 한 번에 확인하세요!</p>
                 <br/>
             </div></center>
-            <div>
-                <form method="post" action="action_popup.php" target="if1">
-                    <select name="mname" id="selectBox" class="sbox" style="width: 200px; height: 50px;"">
-                    <option value="">영화 선택</option>
-                <?php
-                include "dbconfig.php";
-                $sql = "SELECT DISTINCT * FROM store";
-                $result = $conn->query($sql);
-                echo "<option>";
-                if($result->num_rows >0){
-                    while($row=$result->fetch_assoc()) {
-                        echo $row["Stno"]."<br><option/>";
-                    }
-                }else{
-                    echo "0 result";
-                }
-                $conn->close();
-                ?><select/>
-
-                &nbsp;&nbsp;&nbsp;
-                        <select name="lname" class="sbox" style="width: 100px; height: 50px;">
-                            <option>청주시</option>
-                            <option>청주시</option>
-                            <option>청주시</option>
-                            <option>청주시</option>
-                        </select>
+        <div style="text-align: center;">
+            <form method="post" action="action_popup.php" target="if1">
+                <select name="mname" id="selectBox" class="sbox" style="width: 200px; height: 50px;">
+                    <?=$options ?>
+                    <select/>
                     &nbsp;&nbsp;&nbsp;
-
-                        <button type="submit" class="btn btn-primary btn-xl" id="selectButton">선택</button>
-                        <form/>
-                        <br><br><br>
+                    <select name="lname" class="sbox" style="width: 100px; height: 50px;">
+                        <option>대전</option>
+                        <option>충북</option>
+                        <option>충남</option>
+                        <option>세종</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary btn-xl" id="selectButton">선택</button>
+                    <form/>
+                    <br><br><br>
         </div>
-            <iframe name="if1">
-            </iframe>
-            <div/>
+        <div style="text-align: center;">
+        <iframe name="if1" class="if">
+        </iframe></div>
+        <div/>
 
 </section>
 <hr class="ht-line">
 <!-- About Section -->
-<section class="page-section bg-primary text-white mb-0" id="about" style="background-color: #ffffff !important;">
-    <div class="container">
-        <!-- Icon Divider -->
+<section class="page-section bg-primary text-white mb-0" id="about" style="text-align: center; padding:1%; background-color: #ffffff !important;">
+    <div class="container" style="text-align: center;">
 
+        <!-- About Section Heading -->
+        <p style="color: black;">*매 시간 업데이트*<br/>이미지 클릭 시 '다음 영화 매거진'으로 이동합니다!<br/><br/></p>
+        <h2 class="page-section-heading text-center text-uppercase text-white" style="color: #1ABC9C !important;">영화 핫이슈</h2>
+
+        <!-- Icon Divider -->
         <div class="divider-custom divider-light" style="color: #1ABC9C !important;">
             <div class="divider-custom-line" style="color: #1ABC9C !important;"></div>
             <div class="divider-custom-icon" style="color: #1ABC9C !important;">
@@ -416,17 +437,15 @@ $R=json_decode($json_string,true);
             </div>
             <div class="divider-custom-line" style="color: #1ABC9C !important;"></div>
         </div>
-        <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white" style="color: #1ABC9C !important;">영화 핫이슈</h2>
-        <br/>
-        <center><p style="color: black !important;">이미지를 클릭하면 다음 영화 매거진으로 이동합니다!</p>
-        </center>
-
+            <center>
         <!-- About Section Content -->
-        <div class="row" style="color: #1ABC9C !important;">
-        </div>
-        <div id="wc" class="text-center mt-4">
-            <a href="https://movie.daum.net/magazine/new"><img width="1100" height="550" src="img/wordcloud.png"></a>
+            <div style="text-align: center;">
+                <img width="1000" height="500" src="img/wordcloud.png" >
+            </div>
+
+            </center>
+
+        <div class="text-center mt-4">
         </div>
 
     </div>
@@ -451,8 +470,8 @@ $R=json_decode($json_string,true);
             <!-- Footer link -->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">CONTACT</h4>
-                <p class="lead mb-0">jinoh
-                    <br>Yujeong<br/>Ahyun</p>
+                <p class="lead mb-0">jinoh / wlsdh1110@naver.com
+                    <br>Yujeong / Yujeong2236@naver.com<br/>ahyun / cah@kakao.com</p>
             </div>
         </div>
     </div>
