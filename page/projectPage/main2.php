@@ -3,35 +3,6 @@
 <?php
 $json_string = file_get_contents('movie_ranking.json');
 $R=json_decode($json_string,true);
-$servername = "3.211.18.78";
-$username = "root";
-$password = "root";
-$dbname = "movie";
-
-$port = "8000";
-//create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-//check connection
-if($conn -> connect_error){
-	die("Connection failed : " + $conn -> connect_error);
-}
-
-mysqli_select_db($conn, $dbname) or die('DB selection failed');
-$sql = "SELECT DISTINCT mv_name FROM movie LIMIT 10";
-$result = $conn->query($sql);
-
-$options = ""; 
-//var_dump($result);
-if($result->num_rows >0){
-	while($row=mysqli_fetch_array($result)) {
-		$options .= "<option>". $row['mv_name']."<br><option/>";
-	}
-}else{
-	$options .= "0 result</option>";
-}
-//var_dump($options);
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -393,18 +364,7 @@ $conn->close();
             </div></center>
             <div>
                 <form method="post" action="action_popup.php" target="if1">
-                    <select name="mname" id="selectBox" class="sbox" style="width: 200px; height: 50px;">
-			<?=$options ?>
-		    <select/>
-                    &nbsp;&nbsp;&nbsp;
-                        <select name="lname" class="sbox" style="width: 100px; height: 50px;">
-                            <option>대전</option>
-                            <option>충북</option>
-                            <option>충남</option>
-                            <option>세종</option>
-                        </select>
-                    &nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary btn-xl" id="selectButton">선택</button>
+                   
                         <form/>
                         <br><br><br>
         </div>

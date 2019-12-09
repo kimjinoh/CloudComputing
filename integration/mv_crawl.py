@@ -13,7 +13,7 @@ import datetime
 from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
-
+import threading
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
@@ -22,7 +22,15 @@ driver = webdriver.Chrome(chrome_options = options, executable_path = "/usr/bin/
 driver.implicitly_wait(3)
 driver.maximize_window()
 
-out = open("timetable.txt",'w', -1, "utf-8")
+def fun():
+    timer = threading.Timer(180, fun)
+    global out
+
+    out = open("timetable.txt", 'w', -1, "utf-8")
+    cgvtime_request()
+    lottime_request()
+    megatime_request()
+    timer.start()
 def lottime_request():
     url = 'http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx#%EC%A0%84%EC%B2%B4'
     driver.get(url)
