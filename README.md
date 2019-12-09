@@ -8,7 +8,7 @@
 - ### 프로젝트 설명
   ```
   이 프로젝트는 자신이 원하는 시간대의 영화가 언제, 어디서 상영하는지 한 눈에 볼 수 있어 
-  그 동안 영화시간을 찾아 여기저기 헤매셨던 당신에게, 편리한 서비스를 제공힌다.
+  그 동안 영화시간을 찾아 여기저기 헤매셨던 당신에게, 편리한 서비스를 제공다.
   ```
 
 
@@ -49,7 +49,7 @@
   > /usr/bin/chromedriver
   
   ```
-  ####  패키지
+  #### 필요한 패키지
   ```
   from selenium import webdriver
   from selenium.webdriver.chrome.options import Options
@@ -87,7 +87,7 @@
     );
   ```
   
-  #### 실행
+  #### 실행 
     #### => 최종 URL : http://3.211.18.78/page/projectPage/main.php
     #### 영화관 크롤링
     ```
