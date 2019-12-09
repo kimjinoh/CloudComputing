@@ -114,7 +114,8 @@
        local-infile=1
         출처: https://gomi97.tistory.com/1104 [사랑하기 좋은 시절에 맘껏 사랑하라.]
       
-      2) The MySQL server is running with the --secure-file-priv option so it cannot execute this statement 오류 발생시 해결방법
+      2) The MySQL server is running with the --secure-file-priv option so it cannot execute this statement 
+       오류 발생시 해결방법
        1. secure_file_priv 설정을 바꿔준다.
        $ vim /etc/mysql/my.cnf
        위의 경로로 들어가서
