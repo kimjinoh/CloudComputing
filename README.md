@@ -49,7 +49,7 @@
   > /usr/bin/chromedriver
   
   ```
-  #### 파이썬 패키지
+  ####  패키지
   ```
   from selenium import webdriver
   from selenium.webdriver.chrome.options import Options
@@ -112,7 +112,7 @@
        3. my.cnf 설정 변경
        [mysql]
        local-infile=1
-        출처: https://gomi97.tistory.com/1104 [사랑하기 좋은 시절에 맘껏 사랑하라.]
+       출처: https://gomi97.tistory.com/1104 [사랑하기 좋은 시절에 맘껏 사랑하라.]
       
       2) The MySQL server is running with the --secure-file-priv option so it cannot execute this statement 
        오류 발생시 해결방법
@@ -124,7 +124,7 @@
        를 입력하고 저장한 뒤, 아래 명령으로 MySQL을 재시작한다.
        $ service mysql restart
       
-        출처: https://sssunho.tistory.com/56 [개발자 수노]
+       출처: https://sssunho.tistory.com/56 [개발자 수노]
     ```
     #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
