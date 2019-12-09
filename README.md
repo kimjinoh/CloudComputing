@@ -74,7 +74,8 @@
     > ./ltcgvmegacrawl.py
     > timetable.txt 생성
     ```
-    ![timetable.PNG](./image/timetable.PNG){: width="100px" height="100px"}
+    ![timetable.PNG](./image/timetable.PNG =200px)
+    
     ```
     > MySQL -u root -p
     > use movie;
