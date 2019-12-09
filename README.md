@@ -72,8 +72,7 @@
     );
   ```
   
-  #### 실행 
-    #### => 최종 URL : http://3.211.18.78/page/projectPage/main.php
+  #### 실행 과정
     #### 영화관 크롤링
     ```
     $ ./ltcgvmegacrawl.py
@@ -163,4 +162,6 @@
     > 영화 핫이슈 클릭
       * 워드클라우드로 영화관련 이슈 단어 확인 가능
     ```
+    #### 실행 
+    #### => 최종 URL : http://3.211.18.78/page/projectPage/main.php
     
