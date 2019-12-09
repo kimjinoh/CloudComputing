@@ -72,8 +72,9 @@
   #### 실행
     ```
     > ./ltcgvmegacrawl.py
-    > timetable.txt 생성
+    > timetable.txt 
     ```
+    #### timetable.txt에 크롤링 결과 저장
     ![timetable.PNG](./image/timetable.PNG)
     
     ```
@@ -81,7 +82,7 @@
     > use movie;
     > LOAD DATA local infile '/home/ubuntu/project/CloudComputing/CloudComputing/integration/timetable.txt'
       into table movie fields terminated by '.';
-    > Database에 timetable.txt 데이터 넣기
     ```
+    #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
        
