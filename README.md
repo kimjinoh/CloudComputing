@@ -91,8 +91,9 @@
     #### => 최종 URL : http://3.211.18.78/page/projectPage/main.php
     #### 영화관 크롤링
     ```
-    > ./ltcgvmegacrawl.py
-    > timetable.txt 
+    $ ./ltcgvmegacrawl.py
+   
+   > timetable.txt  
     ```
     #### timetable.txt에 크롤링 결과 저장
     ![timetable.PNG](./image/timetable.PNG)
