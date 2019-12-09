@@ -74,7 +74,7 @@
     > ./ltcgvmegacrawl.py
     > timetable.txt 생성
     ```
-    ![timetable.png](./image/timetable.png)
+    ![timetable.PNG](./image/timetable.PNG)
     ```
     > MySQL -u root -p
     > use movie;
@@ -82,5 +82,5 @@
     into table movie fields terminated by '.';
     > Database에 timetable.txt 데이터 넣기
     ```
-    ![data.png](./image/data.png)
+    ![data.PNG](./image/data.PNG)
        
