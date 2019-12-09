@@ -99,27 +99,27 @@
     > LOAD DATA local infile '/home/ubuntu/project/CloudComputing/CloudComputing/integration/timetable.txt'
       into table movie fields terminated by '.';
       
-      위의 과정으로 LOAD DATA시도했을 때 실패했을 
+      위의 과정으로 LOAD DATA시도했을 때 실패했을 시
       1) ERROR 1148 (42000): The used command is not allowed with this MySQL version 라는 오류 발생시 해결방법 
-      1. mysql 접속시 --local-infile=1 옵션 추가
-      mysql -u root -p --local-infile=1 database
-      2.  local 키워드 제외
-      $ mysql>LOAD DATA INFILE 'test.csv' INTO TABLE tablename FIELDS TERMINATED BY ','; 
-      3. my.cnf 설정 변경
-      [mysql]
-      local-infile=1
-      출처: https://gomi97.tistory.com/1104 [사랑하기 좋은 시절에 맘껏 사랑하라.]
+       1. mysql 접속시 --local-infile=1 옵션 추가
+       mysql -u root -p --local-infile=1 database
+       2.  local 키워드 제외
+       $ mysql>LOAD DATA INFILE 'test.csv' INTO TABLE tablename FIELDS TERMINATED BY ','; 
+       3. my.cnf 설정 변경
+       [mysql]
+       local-infile=1
+        출처: https://gomi97.tistory.com/1104 [사랑하기 좋은 시절에 맘껏 사랑하라.]
       
       2) The MySQL server is running with the --secure-file-priv option so it cannot execute this statement 오류 발생시 해결방법
-      1. secure_file_priv 설정을 바꿔준다.
-      $ vim /etc/mysql/my.cnf
-      위의 경로로 들어가서
-      [mysqld]
-      secure-file-priv=""
-      를 입력하고 저장한 뒤, 아래 명령으로 MySQL을 재시작한다.
-      $ service mysql restart
+       1. secure_file_priv 설정을 바꿔준다.
+       $ vim /etc/mysql/my.cnf
+       위의 경로로 들어가서
+       [mysqld]
+       secure-file-priv=""
+       를 입력하고 저장한 뒤, 아래 명령으로 MySQL을 재시작한다.
+       $ service mysql restart
       
-      출처: https://sssunho.tistory.com/56 [개발자 수노]
+        출처: https://sssunho.tistory.com/56 [개발자 수노]
     ```
     #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
