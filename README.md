@@ -72,17 +72,17 @@
     );
   ```
   
-  - ### 
+ - ### 실행과정
     #### 영화관 크롤링
     ```
-    $ ./ltcgvmegacrawl.py
-   
-   > timetable.txt  
+    $ /mv_crawl.py
+    > timetable.txt 생성 
     ```
     #### timetable.txt에 크롤링 결과 저장
     ![timetable.PNG](./image/timetable.PNG)
     
-    ```
+    #### movie 테이블에 timetable.txt 로드
+    ```sql
     > MySQL -u root -p
     > use movie;
     > LOAD DATA local infile '/home/ubuntu/project/CloudComputing/CloudComputing/integration/timetable.txt'
@@ -111,7 +111,6 @@
       
        출처: https://sssunho.tistory.com/56 [개발자 수노]
     ```
-    #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
     
     #### php에서 json 파일을 읽어 사용을 위한 배열처리
@@ -146,7 +145,7 @@
  - ### 사용법
     #### > 영화 랭킹 클릭
     ```
-      * 매일 9:00 AM에 업데이트 되는 영화 순위 확인 가능
+      * 당일 영화 순위 확인 가능
     ```
      ![ranking.png](./image/ranking.png)
      
@@ -162,7 +161,7 @@
     ```
       * 워드클라우드로 영화관련 이슈 단어 확인 가능
     ```
-    #### 실행 
-    ```
+ - ### 실행 
+   
     최종 URL : http://3.211.18.78/page/projectPage/main.php 
-    ```
+    
