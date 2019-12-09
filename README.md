@@ -73,11 +73,14 @@
     ```
     > ./ltcgvmegacrawl.py
     > timetable.txt 생성
+    ```
     ![timetable.png](./image/timetable.png)
+    ```
     > MySQL -u root -p
     > use movie;
     > LOAD DATA local infile '/home/ubuntu/project/CloudComputing/CloudComputing/integration/timetable.txt'         
     into table movie fields terminated by '.';
     > Database에 timetable.txt 데이터 넣기
+    ```
     ![data.png](./image/data.png)
-    ```    
+       
