@@ -33,6 +33,10 @@
   $ sudo apt-get update
   $ sudo apt-get install google-chrome-stable
   ```
+  #### Chromedriver 경로
+  ```py
+  /usr/bin/chromedriver
+  ```
   #### 파이썬 패키지
   ```
   from selenium import webdriver
@@ -72,6 +76,8 @@
   ```
   
   #### 실행
+    #### => 최종 URL : http://3.211.18.78/page/projectPage/main.php
+    #### 영화관 크롤링
     ```
     > ./ltcgvmegacrawl.py
     > timetable.txt 
@@ -88,6 +94,3 @@
     #### movie 테이블에 timetable.txt 로드
     ![data.PNG](./image/data.PNG)
     
-    ```
-    > 
-       
