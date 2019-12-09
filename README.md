@@ -149,7 +149,7 @@
      > 영화 랭킹 클릭
       * 매일 9:00 AM에 업데이트 되는 영화 순위 확인 가능
     ```
-     ![ranking.PNG](./image/ranking.PNG)
+     ![ranking.png](./image/ranking.png)
      
      ```  
      > 상영 정보 클릭
@@ -157,7 +157,7 @@
       * 영화 제목, 지역 선택 
       * 시간순으로 정렬된 영화관 정보 확인 가능 
      ```
-    ![movie.PNG](./image/movie.PNG)
+    ![movie.png](./image/movie.png)
     
     ```
     > 영화 핫이슈 클릭
