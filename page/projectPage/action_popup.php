@@ -15,7 +15,7 @@ mysqli_select_db($conn, $dbname) or die('DB selection failed');
 if(isset($_POST['mname'])||isset($_POST['lname'])) {
     $op1 = $_POST['mname'];
     $op2 = $_POST['lname'];
-    $result = mysqli_query($conn, "SELECT mv_brand, mv_branch, mv_time FROM movie WHERE mv_name='" . $op1 . "' AND mv_loc='" . $op2 . "' ORDER BY mv_time");
+    $result = mysqli_query($conn, "SELECT mv_brand, mv_branch, mv_time FROM movie WHERE mv_name='" . $op1 . "' AND mv_loc='" . $op2 . "' and left(curtime(),5) <= mv_time ORDER BY mv_time");
     // $street = mysqli_fetch_array($result);
     while($street = mysqli_fetch_array($result)){
         echo $result_street = $street['mv_brand'];
