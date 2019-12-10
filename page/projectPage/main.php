@@ -59,7 +59,7 @@ $conn->close();
         .sbox::-ms-expand { display: none;
         }
         .if{
-            width:500px;
+            width:100%;
             height: 300px;
             font-size: 32px;
         }
@@ -392,9 +392,13 @@ $conn->close();
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <center><div>
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 시간표</h2>
+	<center><div>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 시간표</h2><br/>
                 <p>원하는 영화의 상영 정보를 한 번에 확인하세요!</p>
+                <?php
+                echo "상영 정보 날짜 : ";
+                date_default_timezone_set("Asia/Seoul");
+                echo date("Y-m-d") . "<br /><br />\n\n";?>
                 <br/>
             </div></center>
         <div style="text-align: center;">
@@ -426,7 +430,7 @@ $conn->close();
     <div class="container" style="text-align: center;">
 
         <!-- About Section Heading -->
-        <p style="color: black;">*매 시간 업데이트*<br/>이미지 클릭 시 '다음 영화 매거진'으로 이동합니다!<br/><br/></p>
+        <p style="color: black;">*매 시간 업데이트*<br/>이미지 클릭 시 'NAVER 영화 기사'로 이동합니다!<br/><br/></p>
         <h2 class="page-section-heading text-center text-uppercase text-white" style="color: #1ABC9C !important;">영화 핫이슈</h2>
 
         <!-- Icon Divider -->
@@ -440,7 +444,7 @@ $conn->close();
             <center>
         <!-- About Section Content -->
             <div style="text-align: center;">
-                <a href="https://movie.daum.net/magazine/new"><img width="1000" height="500" src="img/wordcloud.png" ></a>
+                <a href="https://entertain.naver.com/movie"><img style=" max-width: 100%; height: auto;" src="img/wordcloud.png" ></a>
             </div>
 
             </center>
